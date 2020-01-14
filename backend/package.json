@@ -11,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "express": "^4.17.1",
+    "dotenv": "^8.2.0",
+    "cors": "^2.8.5",
+    "twit": "2.2.11"
   }
 }
