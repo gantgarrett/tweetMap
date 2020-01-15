@@ -6,10 +6,12 @@
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "react-scripts": "^1.0.17"
+    "react-scripts": "^1.1.5"
   },
   "dependencies": {
-    "esri-loader": "^1.6.0",
+    "@arcgis/webpack-plugin": "^4.14.0",
+    "@esri/react-arcgis": "^5.0.0",
+    "esri-loader": "^1.7.0",
     "esri-loader-react": "^2.0.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
