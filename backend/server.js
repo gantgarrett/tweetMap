@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const bodyParser = require('body-parser')
 const Twit = require('twit')
 const cors = require('cors')
 const app = express()
@@ -23,7 +24,6 @@ stream.on('tweet', function (tweet) {
 app.use(cors())
 
 app.get('/', (req, res) => {
-    username = req.body.username
     res.send('Hello World')
 })
 

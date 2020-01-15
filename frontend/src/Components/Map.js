@@ -11,12 +11,39 @@ class WebMapView extends PureComponent {
     return (
       <EsriLoaderReact 
         options={options} 
-        modulesToLoad={['esri/Map', 'esri/views/SceneView']}    
-        onReady={({loadedModules: [Map, SceneView], containerNode}) => {
-          new SceneView({
+        modulesToLoad={[
+          'esri/Map', 
+          'esri/views/SceneView', 
+          'esri/layers/StreamLayer', 
+          'esri/layers/GraphicsLayer'
+        ]}    
+        onReady={({loadedModules: [Map, SceneView, StreamLayer, GraphicsLayer], containerNode}) => {
+          /***************************************
+          * Set up map view with initial extent
+          ***************************************/
+          let map = new Map({
+            basemap: "gray"
+          })
+
+          let view = new SceneView({
+            map: map,
             container: containerNode,
-            map: new Map({basemap: 'streets', ground: 'world-elevation'})
-          });
+            zoom: 7,
+            center: [-87, 34]
+          })
+
+          let graphicsLayer = new GraphicsLayer()
+          map.add(graphicsLayer)
+
+          // Construct Stream Layer
+          let streamLayer = new StreamLayer({
+            url: 'https://geoeventsample1.esri.com:6443/arcgis/rest/services/LABus/StreamServer', // add actual URL here from Express server
+            purgeOptions: {
+              displayCount: 10000
+            }
+          })
+
+          map.add(streamLayer)
         }}
       />
     );
