@@ -15,16 +15,19 @@ var T = new Twit({
     strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser())
+
 var stream = T.stream('statuses/sample')
- 
 stream.on('tweet', function (tweet) {
-  console.log(tweet)
+  if (tweet.coordinates !== null) {
+    console.log(tweet.coordinates.coordinates)
+  }
 })
 
-app.use(cors())
-
 app.get('/', (req, res) => {
-    res.send('Hello World')
+  res.send('Hello World')
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

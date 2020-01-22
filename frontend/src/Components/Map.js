@@ -8,6 +8,12 @@ class WebMapView extends PureComponent {
       url: 'https://js.arcgis.com/4.6/'
     };
 
+    let getLocations = () => {
+      fetch('statuses/sample')
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
+
     return (
       <EsriLoaderReact 
         options={options} 
@@ -45,6 +51,8 @@ class WebMapView extends PureComponent {
 
           map.add(streamLayer)
         }}
+
+        getLocations={getLocations}
       />
     );
   }
