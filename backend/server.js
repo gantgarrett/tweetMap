@@ -7,12 +7,12 @@ const app = express()
 const port = 3000
 
 var T = new Twit({
-    consumer_key:         process.env.REACT_APP_CONSUMER_KEY,
-    consumer_secret:      process.env.REACT_APP_CONSUMER_SECRET,
-    access_token:         process.env.REACT_APP_ACCESS_TOKEN,
-    access_token_secret:  process.env.REACT_APP_ACCESS_TOKEN_SECRET,
-    timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-    strictSSL:            true,     // optional - requires SSL certificates to be valid.
+  consumer_key:         process.env.REACT_APP_CONSUMER_KEY,
+  consumer_secret:      process.env.REACT_APP_CONSUMER_SECRET,
+  access_token:         process.env.REACT_APP_ACCESS_TOKEN,
+  access_token_secret:  process.env.REACT_APP_ACCESS_TOKEN_SECRET,
+  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+  strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
 app.use(cors())
@@ -24,6 +24,21 @@ stream.on('tweet', function (tweet) {
   if (tweet.coordinates !== null) {
     console.log(tweet.coordinates.coordinates)
   }
+})
+
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser())
+
+var stream = T.stream('statuses/sample')
+stream.on('tweet', function (tweet) {
+<<<<<<< HEAD
+  if (tweet.coordinates !== null) {
+    console.log(tweet.coordinates.coordinates)
+  }
+=======
+  //console.log(tweet)
+>>>>>>> 93db20a0d5eb2af0db5acebe4ce30f478b8bd435
 })
 
 app.get('/', (req, res) => {
