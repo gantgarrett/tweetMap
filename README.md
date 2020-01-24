@@ -3,7 +3,7 @@
 ## Dependencies
 
 ### Backend:
-* WebSockets: [npmjs](https://https://www.npmjs.com/package/ws) 
+* WebSockets: [npmjs](https://www.npmjs.com/package/ws) 
 * Twit: [npmjs](https://www.npmjs.com/package/twit)
 
 ### Frontend:
