@@ -31,12 +31,12 @@ class WebMapView extends PureComponent {
             basemap: "gray"
           })
 
-          let view = new SceneView({
-            map: map,
-            container: containerNode,
-            zoom: 7,
-            center: [-87, 34]
-          })
+          // let view = new SceneView({
+          //   map: map,
+          //   container: containerNode,
+          //   zoom: 7,
+          //   center: [-87, 34]
+          // })
 
           let graphicsLayer = new GraphicsLayer()
           map.add(graphicsLayer)

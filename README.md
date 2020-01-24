@@ -1,6 +1,11 @@
 # tweetMap
 
-# Dependencies
-.Dotenv 
-MaterialUI https://github.com/mui-org/material-ui
+## Dependencies
 
+### Backend:
+* WebSockets: [npmjs](https://https://www.npmjs.com/package/ws) 
+* Twit: [npmjs](https://www.npmjs.com/package/twit)
+
+### Frontend:
+* Esri-Loader-React: [npmjs](https://www.npmjs.com/package/esri-loader-react)
+* @esri/react/arc-gis [npmjs](https://www.npmjs.com/package/@esri/react-arcgis)
