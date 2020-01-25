@@ -53,7 +53,7 @@ class App extends Component {
   };
 
   render() {
-    const {windowHeight} = this.state;
+    const {windowHeight, messages} = this.state;
     return(
       <div style={{
         height: {windowHeight }+ 'px !important',
@@ -61,6 +61,9 @@ class App extends Component {
      className="map-container">
         <Map />
         Height = {windowHeight}px
+        <p>
+          {messages.map(x => x) + '\n'}
+        </p>
       </div>
     )
   }
